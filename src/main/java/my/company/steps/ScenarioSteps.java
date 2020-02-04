@@ -34,7 +34,7 @@ public class ScenarioSteps extends BaseSteps{
     @Then("^значения полей равны:$")
     public void checkFillForm(DataTable fields){
         fields.asMap(String.class, String.class)
-                .forEach((field, value) -> mortgagePageSteps.checkValues((String)field, (String)value));
+                .forEach((field, value) -> mortgagePageSteps.checkField((String)field, (String)value));
     }
 
 }

@@ -22,7 +22,7 @@ public class MainPage extends BasePage {
     WebElement submenuItem;
 
     public void selectMenuItem(String itemName){
-        BaseSteps.getDriver().findElement(By.xpath("//ul[@class='lg-menu__list']//span[contains(text(), '"+itemName+"')]/..")).click();
+        driver.findElement(By.xpath("//ul[@class='lg-menu__list']//span[contains(text(), '"+itemName+"')]/..")).click();
     }
     public void selectSubmenuItem(String itemName){
         WebElement element = driver.findElement(By.xpath("//ul[@class='lg-menu__sub-list']//a[contains(text(), '"+itemName+"')]"));

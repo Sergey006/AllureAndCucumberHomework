@@ -31,8 +31,13 @@ public class MortgagePageSteps extends BaseSteps {
         new MortgagePage().switchHaveCard();
     }
 
-    @Step("проверка, что поле {0} заполнено значением {1}")
-    public void checkValues(String field, String value) {
+    @Step("проверяются значения")
+    public void checkFields(HashMap<String, String> fields) {
+        fields.forEach(this::checkField);
+    }
+    @Step("поле {0} заполнено значением {1}")
+    public void checkField(String field, String value){
         Assert.assertEquals(new MortgagePage().getFieldValue(field), value);
     }
+
 }

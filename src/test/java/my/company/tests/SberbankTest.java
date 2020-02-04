@@ -47,7 +47,8 @@ public class SberbankTest  extends BaseSteps {
         mortgagePageSteps.scroollPageToFields();
         mortgagePageSteps.fillFields(data);
         mortgagePageSteps.switchHaveCard();
-
+        HashMap<String, String> checkData = new LinkedHashMap<>();
+        mortgagePageSteps.checkFields(checkData);
     }
 
 }
