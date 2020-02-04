@@ -16,11 +16,6 @@ public class MainPage extends BasePage {
         PageFactory.initElements(BaseSteps.getDriver(), this);
     }
 
-    /*@FindBy(xpath = "//ul[@class='lg-menu__list']//span[contains(text(), 'Ипотека')]/..")
-    WebElement menuItem;*/
-    @FindBy(xpath = "//ul[@class='lg-menu__sub-list']//a[contains(text(), 'готовое жильё')]")
-    WebElement submenuItem;
-
     public void selectMenuItem(String itemName){
         driver.findElement(By.xpath("//ul[@class='lg-menu__list']//span[contains(text(), '"+itemName+"')]/..")).click();
     }

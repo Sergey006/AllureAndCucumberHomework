@@ -31,6 +31,11 @@ public class MortgagePageSteps extends BaseSteps {
         new MortgagePage().switchHaveCard();
     }
 
+    @Step("выполнено переключение опции Молодая семья")
+    public void switchYoungFamilyOption(){
+        new MortgagePage().switchYoungFamilyDiscount();
+    }
+
     @Step("проверяются значения")
     public void checkFields(HashMap<String, String> fields) {
         fields.forEach(this::checkField);

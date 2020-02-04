@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 
 public class BaseSteps {
-    public static WebDriver driver;
+    protected static WebDriver driver;
     protected static String baseUrl;
     public static Properties properties = TestProperties.getInstance().getProperties();
 

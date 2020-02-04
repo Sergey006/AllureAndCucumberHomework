@@ -19,18 +19,6 @@ public class SberbankTest  extends BaseSteps {
     MainPageSteps mainPageSteps;
     MortgagePageSteps mortgagePageSteps;
 
-    /*@Before
-    public void setUp() throws Exception {
-        ChromeDriverManager.getInstance().setup();
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-        driver = new ChromeDriver();
-        mainPageSteps = new MainPageSteps();
-        mortgagePageSteps = new MortgagePageSteps();
-
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.get("https://www.sberbank.ru/ru/person");
-    }*/
     @Test
     public void Test() throws InterruptedException {
         HashMap<String, String> data = new LinkedHashMap<>();
@@ -47,7 +35,12 @@ public class SberbankTest  extends BaseSteps {
         mortgagePageSteps.scroollPageToFields();
         mortgagePageSteps.fillFields(data);
         mortgagePageSteps.switchHaveCard();
+        //mortgagePageSteps.switchYoungFamilyOption();
         HashMap<String, String> checkData = new LinkedHashMap<>();
+        data.put("Сумма кредита","2 122 000 ₽");
+        data.put("Ежемесячный платёж", "18 937 ₽");
+        data.put("Необходимый доход", "31 561 ₽");
+        data.put("Процентная ставка", "11 %");
         mortgagePageSteps.checkFields(checkData);
     }
 
