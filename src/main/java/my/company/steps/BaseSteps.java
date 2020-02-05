@@ -41,12 +41,26 @@ public class BaseSteps {
             default:
                 System.setProperty("webdriver.chrome.driver", properties.getProperty("webdriver.chrome.driver"));
                 driver = new ChromeDriver();
-        }*/
-        /*System.setProperty("webdriver.chrome.driver", properties.getProperty("webdriver.chrome.driver"));
-        driver = new ChromeDriver();*/
+        */
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName("chrome");
-        capabilities.setVersion("73.0");
+        switch (properties.getProperty("browser")) {
+            case "firefox":
+                capabilities.setBrowserName("firefox");
+                capabilities.setVersion("66.0");
+                break;
+            case "chrome":
+                capabilities.setBrowserName("chrome");
+                capabilities.setVersion("73.0");
+                break;
+            case "opera":
+                capabilities.setBrowserName("chrome");
+                capabilities.setVersion("60.0");
+                break;
+            default:
+                capabilities.setBrowserName("chrome");
+                capabilities.setVersion("73.0");
+        }
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", false);
         capabilities.setCapability("enableLog", false);
