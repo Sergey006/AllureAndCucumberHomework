@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
 
-public class MortgagePageSteps extends BaseSteps {
+public class MortgagePageSteps {
 
     @Step("поле {0} заполняется значением {1}")
     public void fillField(String field, String value){
@@ -42,7 +42,7 @@ public class MortgagePageSteps extends BaseSteps {
     }
     @Step("поле {0} заполнено значением {1}")
     public void checkField(String field, String value){
-        Assert.assertEquals(new MortgagePage().getFieldValue(field), value);
+        Assert.assertEquals(value, new MortgagePage().getFieldValue(field));
     }
 
 }

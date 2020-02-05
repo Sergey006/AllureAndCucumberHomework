@@ -5,7 +5,7 @@ import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
 
 
-public class ScenarioSteps extends BaseSteps{
+public class ScenarioSteps {
 
     MainPageSteps mainPageSteps = new MainPageSteps();
     MortgagePageSteps mortgagePageSteps = new MortgagePageSteps();
@@ -18,6 +18,10 @@ public class ScenarioSteps extends BaseSteps{
     @When("^выбран подпункт меню \"(.+)\"$")
     public void selectMenuInsurance(String menuName){
         mainPageSteps.selectSubmenuItem(menuName);
+    }
+    @When("^выполнена прокрутка страницы до полей ввода$")
+    public void scrollPageToFields(){
+        mortgagePageSteps.scroollPageToFields();
     }
     @When("^выполнено переключение наличия зарплатной карты$")
     public void switchHaveCard(){

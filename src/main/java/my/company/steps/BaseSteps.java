@@ -1,10 +1,10 @@
 package my.company.steps;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import io.qameta.allure.Attachment;
 import my.company.util.TestProperties;
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;

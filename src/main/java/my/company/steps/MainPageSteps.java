@@ -4,7 +4,7 @@ import io.qameta.allure.Step;
 import my.company.pages.MainPage;
 import org.openqa.selenium.WebDriver;
 
-public class MainPageSteps extends BaseSteps {
+public class MainPageSteps {
 
     @Step("выбран пункт меню {itemName}")
     public void selectMenuItem(String itemName){

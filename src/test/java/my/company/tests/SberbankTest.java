@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.concurrent.TimeUnit;
 
-public class SberbankTest  extends BaseSteps {
+public class SberbankTest{
 
     MainPageSteps mainPageSteps;
     MortgagePageSteps mortgagePageSteps;

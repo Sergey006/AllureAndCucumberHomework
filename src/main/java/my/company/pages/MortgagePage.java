@@ -92,13 +92,13 @@ public class MortgagePage extends BasePage {
     public String getFieldValue(String fieldName){
         switch (fieldName){
             case  "Сумма кредита":
-                return amountOfCredit.getAttribute("value");
+                return amountOfCredit.getText();
             case  "Ежемесячный платёж":
-                return monthlyPayment.getAttribute("value");
+                return monthlyPayment.getText();
             case  "Необходимый доход":
-                return requiredIncome.getAttribute("value");
+                return requiredIncome.getText();
             case "Процентная ставка":
-                return rate.getAttribute("value");
+                return rate.getText();
         }
         throw new AssertionError("Поле не объявлено на странице");
     }
