@@ -10,13 +10,16 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.URI;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 
 public class BaseSteps {
-    protected static WebDriver driver;
+    protected static RemoteWebDriver driver;
     protected static String baseUrl;
     public static Properties properties = TestProperties.getInstance().getProperties();
 
@@ -39,8 +42,15 @@ public class BaseSteps {
                 System.setProperty("webdriver.chrome.driver", properties.getProperty("webdriver.chrome.driver"));
                 driver = new ChromeDriver();
         }*/
-        System.setProperty("webdriver.chrome.driver", properties.getProperty("webdriver.chrome.driver"));
-        driver = new ChromeDriver();
+        /*System.setProperty("webdriver.chrome.driver", properties.getProperty("webdriver.chrome.driver"));
+        driver = new ChromeDriver();*/
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setBrowserName("chrome");
+        capabilities.setVersion("73.0");
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", false);
+        capabilities.setCapability("enableLog", false);
+        driver = new RemoteWebDriver(URI.create("http://selenoid.aplana.com:4445/wd/hub/").toURL(),capabilities);
         baseUrl = properties.getProperty("app.url");
         System.out.println(baseUrl);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
